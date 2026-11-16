@@ -1,0 +1,21 @@
+/* Only applies on pages that contain the Wild Projects code block (body:has(.wp)). */
+html:has(.wp), body:has(.wp) { overflow-x: clip; }
+/* Hide the template's own header/footer — the code block brings its own. */
+body:has(.wp) #header,
+body:has(.wp) header.header,
+body:has(.wp) #footer-sections,
+body:has(.wp) footer.sections { display: none !important; }
+body:has(.wp) #page { margin-top: 0 !important; padding-top: 0 !important; }
+/* Let the code block run edge-to-edge */
+body:has(.wp) .page-section:has(.wp) { padding: 0 !important; min-height: 0 !important; }
+body:has(.wp) .page-section:has(.wp) .content-wrapper { padding: 0 !important; max-width: none !important; }
+body:has(.wp) .page-section:has(.wp) .section-background { display: none !important; }
+body:has(.wp) .sqs-block.code-block,
+body:has(.wp) .sqs-block-code { padding: 0 !important; }
+body:has(.wp) .fe-block:has(.wp) { grid-area: 1 / 1 / -1 / -1 !important; }
+body:has(.wp) .fluid-engine:has(.wp) { display: block !important; }
+.sqs-block-code .wp, .code-block .wp { width: 100vw; position: relative; left: 50%; margin-left: -50vw; }
+/* Squarespace adds its own heading/paragraph styles — keep ours */
+.wp h1, .wp h2, .wp h3, .wp p, .wp li, .wp a { text-transform: none; }
+.wp .wp-btn, .wp .wp-btn:visited { color: #fff; }
+.wp .wp-btn--ghost:hover { color: var(--ink); }
